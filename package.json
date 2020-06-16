@@ -1,0 +1,14 @@
+{
+  "name": "kurious-fe-rebuild",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://mikeymeister@github.com/mikeymeister/kurious-fe-rebuild",
+  "author": "Mike <mike@kurious.agency>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "build": "tailwindcss build src/css/app.css -o public/assets/css/app.css"
+  }
+}

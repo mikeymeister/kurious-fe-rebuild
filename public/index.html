@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body class="font-sans bg-red-200">
+    <div id="main-nav" x-data="{menuOpen:false}" @keydown.escape="isOpen = false">
+        <div class="relative bg-white border-b-2 border-gray-100 md:shadow-md">
+            <div class="container max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                    <div class="flex items-center md:hidden -mr-2 -my-2">
+                        <div class="border-r">
+                            <a href="" class="inline-flex items-center justify-center pr-2 rounded-md hover:text-gray-400 focus:outline-none focus:text-gray-400 transition duration-150 ease-in-out" >
+                                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="20" height="20" ><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M16.793.249,4.322,11.233h0a1.066,1.066,0,0,0,0,1.539L16.793,23.751a.987.987,0,0,0,1.414-.107l1.557-1.85a1.028,1.028,0,0,0-.111-1.438L10.2,12.191a.25.25,0,0,1,0-.379l9.45-8.168a1.021,1.021,0,0,0,.349-.7,1,1,0,0,0-.238-.741L18.207.356A.988.988,0,0,0,17.522,0,.978.978,0,0,0,16.793.249Z" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </a>
+                        </div>
+                        <div class="">
+                            <button type="button" class="inline-flex items-center justify-center pl-2 rounded-md text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition duration-150 ease-in-out" @click=" menuOpen = ! menuOpen">
+                                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="24" height="24" x-show="!menuOpen"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M0.500 2.500 L23.500 2.500 L23.500 5.500 L0.500 5.500 Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path><path d="M0.500 10.500 L23.500 10.500 L23.500 13.500 L0.500 13.500 Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path><path d="M0.500 18.500 L23.500 18.500 L23.500 21.500 L0.500 21.500 Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="24" height="24" x-show="menuOpen"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M14.3,12.179a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.442L12.177,9.7a.25.25,0,0,1-.354,0L2.561.442A1.5,1.5,0,0,0,.439,2.563L9.7,11.825a.25.25,0,0,1,0,.354L.439,21.442a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,0,0,2.122-2.121Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:w-0 lg:flex-1">
+                        <a href="#" class="flex">
+                        <img class="h-8 w-auto sm:h-10" src="assets/img/logos/kd-logo.png" alt="Workflow" />
+                        </a>
+                    </div>
+                    <div class="flex items-center md:hidden -ml-2 -my-2">
+                        <div class="border-r">
+                            <!-- this is the search button -->
+                            <a href="" type="button" class="inline-flex items-center justify-center pr-2 rounded-md text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition duration-150 ease-in-out">
+                                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="20" height="20"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M23.414,20.591l-4.645-4.645a10.256,10.256,0,1,0-2.828,2.829l4.645,4.644a2.025,2.025,0,0,0,2.828,0A2,2,0,0,0,23.414,20.591ZM10.25,3.005A7.25,7.25,0,1,1,3,10.255,7.258,7.258,0,0,1,10.25,3.005Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </a>
+                        </div>
+                        <div class="">
+                            <!-- this is the basket button -->
+                            <a href="" type="button" class="inline-flex items-center justify-center pl-2 rounded-md text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition duration-150 ease-in-out">
+                                <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="24" height="24"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M22.974,2.125H20.369a1.494,1.494,0,0,0-1.46,1.157L17.815,7.933a.249.249,0,0,1-.243.192H1.089A1,1,0,0,0,.14,9.442l2.668,8a1,1,0,0,0,.948.683H15.1a.251.251,0,0,1,.244.308l-.118.5a.249.249,0,0,1-.243.192H4.922a2.25,2.25,0,1,0,2.3,2.249A.247.247,0,0,1,7.3,21.2a.25.25,0,0,1,.177-.074h6a.25.25,0,0,1,.25.25,2.25,2.25,0,1,0,3.569-1.82.251.251,0,0,1-.1-.26L20.72,4.318a.251.251,0,0,1,.244-.193h2.01a1,1,0,0,0,0-2Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-nav-items" class="md:hidden" x-bind:class="{ 'hidden':!menuOpen}">
+            <div class="relative bg-gray-300">
+                <div class="container max-w-7xl mx-auto px-4 sm:px-6">
+                    <div class="flex justify-center items-center py-4 md:justify-start md:space-x-10">     
+                        <div class="inline-block text-center">
+                            <a href="/account/signin" class="block p-4 text-white bg-gray-800 rounded-full">
+                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="40" height="40"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M17.508,18.5a1,1,0,0,0-1,1V20a.5.5,0,0,1-.5.5h-5.5a.5.5,0,0,1-.5-.5V4a.5.5,0,0,1,.5-.5h5.5a.5.5,0,0,1,.5.5V5a1,1,0,0,0,2,0V2.5a1,1,0,0,0-1-1h-7.5V.5A.5.5,0,0,0,9.4.012l-9,2A.5.5,0,0,0,.008,2.5v19a.5.5,0,0,0,.392.489l9,2a.506.506,0,0,0,.421-.1.5.5,0,0,0,.187-.39v-1h7.5a1,1,0,0,0,1-1v-2A1,1,0,0,0,17.508,18.5Zm-10-6a1.5,1.5,0,1,1-1.5-1.5A1.5,1.5,0,0,1,7.508,12.5Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path><path d="M22.492,11H18.367V9.25a1,1,0,0,0-1.555-.832l-4.875,3.25a1,1,0,0,0,0,1.664l4.875,3.25a1,1,0,0,0,1.555-.832V14h4.125a1.5,1.5,0,1,0,0-3Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </a>
+                            <span class="text-xs uppercase">Sign in</span>
+                        </div>
+                        <div class="mx-6"><span class="">or</span></div>
+                        <div class="inline-block text-center">
+                            <a href="/account/register" class="block p-4 text-white bg-gray-800 rounded-full">
+                                <svg class="align-self-center " xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 20 20" width="40" height="40"><g transform="matrix(0.8333333333333334,0,0,0.8333333333333334,0,0)"><path d="M6.500 6.250 A5.500 5.500 0 1 0 17.500 6.250 A5.500 5.500 0 1 0 6.500 6.250 Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path><path d="M12,13.25a9.511,9.511,0,0,0-9.5,9.5.5.5,0,0,0,.5.5H21a.5.5,0,0,0,.5-.5A9.511,9.511,0,0,0,12,13.25Z" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>
+                            </a>
+                            <span class="text-xs uppercase">Register</span>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="relative bg-white shadow-md">
+                <div class="container max-w-7xl mx-auto px-4 sm:px-6">
+                    <div class="flex justify-center items-center py-4 md:justify-start md:space-x-10">
+                        <div class="flex-col w-1/2">
+                            <a class="block w-full mb-10" href="">Brands</a>
+                            <a class="block w-full mb-10" href="">Offers</a>
+                            <a class="block w-full mb-10" href="">About</a>
+                            <a class="block w-full" href="">Courses</a>
+                        </div>
+                        <div class="flex-col w-1/2">
+                            <a class="block w-full mb-10" href="">Products</a>
+                            <a class="block w-full mb-10" href="">Blog</a>
+                            <a class="block w-full mb-10" href="">Contact</a>
+                            <a class="block w-full" href="">Events</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
