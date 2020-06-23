@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,9 +9,9 @@
 <body class="font-sans bg-red-200">
     <!-- main nav start -->
     <div id="main-nav" x-data="{menuOpen:false}" @keydown.escape="isOpen = false">
-        <div class="relative bg-white border-b-2 border-gray-100">
+        <div class="relative bg-white border-b border-gray-200">
             <div class="container max-w-7xl mx-auto px-4 sm:px-6">
-                <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-between items-center py-4 md:justify-start">
                     <div class="flex items-center md:hidden -mr-2 -my-2">
                         <div class="border-r">
                             <a href="" class="inline-flex items-center justify-center pr-2 rounded-md hover:text-gray-400 focus:outline-none focus:text-gray-400 transition duration-150 ease-in-out" >
@@ -54,13 +53,17 @@
                 </div>
             </div>
         </div>
-        <div class="relative bg-white border-b-2 border-gray-100 hidden md:block md:shadow-md">
+        <div id="desktop-nav-items" class="relative bg-white border-b-2 border-gray-100 hidden md:block md:shadow-md">
             <div class="container max-w-7xl mx-auto px-4">
-                <div class="flex justify-center py-4 text-lg font-light overflow-x-scroll space-x-12">
+                <div class="flex flex-shrink justify-center py-4 text-lg font-light space-x-12">
                     <a class="inline-block" href="">Brands</a>
                     <a class="inline-block" href="">Offers</a>
                     <a class="inline-block" href="">About</a>
                     <a class="inline-block" href="">Courses</a>
+                    <a class="inline-block" href="">Products</a>
+                    <a class="inline-block" href="">Blog</a>
+                    <a class="inline-block" href="">Contact</a>
+                    <a class="inline-block" href="">Events</a>
                  </div>       
             </div>
         </div>
@@ -105,11 +108,17 @@
             </div>
         </div>
     </div>
-    <!-- main nav end -->
-    <!-- main page spacer -->
-    <div class="h-screen"></div>
-    <!-- end spacer -->
-    <div class="pt-10 pb-10 bg-gray-800 relative">
+
+
+<?php 
+    if ($uri && $uri != '/' && file_exists('pages/'.$uri.'.html')) {
+        echo file_get_contents('pages/'.$uri.'.html');
+    } else {
+        echo file_get_contents('pages/login.html');
+    }
+?>
+
+<div class="pt-10 pb-10 bg-gray-800 relative">
         <div class="container mx-auto px-6">
             <div class="flex flex-row flex-wrap md:flex-no-wrap mx-3 text-white">
                 <div class="flex flex-col w-full md:w-1/2 mb-10 md:mb-0 md:mr-6">

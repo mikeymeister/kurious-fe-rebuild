@@ -6,6 +6,7 @@
   "author": "Mike <mike@kurious.agency>",
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/ui": "^0.3.0",
     "tailwindcss": "^1.4.6"
   },
   "scripts": {

@@ -14,7 +14,8 @@ module.exports = {
     extend: {}
   },
   variants: {
-    fill: ['responsive','hover','focus']
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/ui'),
+  ],
 }
