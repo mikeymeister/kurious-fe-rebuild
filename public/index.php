@@ -154,10 +154,10 @@
 
 
 <?php 
-    if ($uri && $uri != '/' && file_exists('pages/'.$uri.'.html')) {
-        echo file_get_contents('pages/'.$uri.'.html');
+    if ($uri && $uri != '/' && file_exists('../src/pages/'.$uri.'.html')) {
+        echo file_get_contents('../src/pages/'.$uri.'.html');
     } else {
-        echo file_get_contents('pages/login.html');
+        echo file_get_contents('../src/pages/login.html');
     }
 ?>
 
