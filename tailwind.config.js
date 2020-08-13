@@ -11,7 +11,11 @@ module.exports = {
       'md': '768px',
       'lg': '1024px',
     },
-    extend: {}
+    extend: {
+      inset: {
+        '-4': '-1rem',
+      },
+    }
   },
   variants: {
   },

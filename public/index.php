@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/assets/css/app.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="font-sans bg-red-200">
+<body class="font-sans">
     <!-- main nav start -->
     <div id="main-nav" x-data="{menuOpen:false}" @keydown.escape="isOpen = false">
         <div class="relative bg-white border-b border-gray-200">
@@ -56,8 +56,8 @@
         <div id="desktop-nav-items" class="relative bg-white border-b-2 border-gray-100 hidden md:block md:shadow-md">
             <div class="container max-w-7xl mx-auto px-4">
                 <div class="flex flex-shrink justify-center py-4 text-lg font-light space-x-12">
-                    <a class="inline-block" href="">Brands</a>
-                    <a class="inline-block" href="">Offers</a>
+                    <a class="inline-block" href="/my-account">My Account</a>
+                    <a class="inline-block" href="/product-detail">Product Detail</a>
                     <a class="inline-block" href="">About</a>
                     <a class="inline-block" href="">Courses</a>
                     <a class="inline-block" href="">Products</a>
@@ -91,8 +91,8 @@
                 <div class="container max-w-7xl mx-auto px-4 sm:px-6">
                     <div class="flex justify-center items-center py-4 md:justify-start md:space-x-10">
                         <div class="flex-col w-1/2">
-                            <a class="block w-full mb-10" href="">Brands</a>
-                            <a class="block w-full mb-10" href="">Offers</a>
+                        <a class="inline-block" href="/my-account">My Account</a>
+                        <a class="inline-block" href="/product-detail">Product Detail</a>
                             <a class="block w-full mb-10" href="">About</a>
                             <a class="block w-full" href="">Courses</a>
                         </div>
@@ -107,6 +107,49 @@
                 </div>
             </div>
         </div>
+        <!-- <div id="basket-pull-out z-50">
+            <div class="fixed inset-0 overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden">
+                    <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex">
+                        
+                            //Slide-over panel, show/hide based on slide-over state.
+
+                            //Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+                            //From: "translate-x-full"
+                            //To: "translate-x-0"
+                            //Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+                            //From: "translate-x-0"
+                            //To: "translate-x-full"
+                        
+                        <div class="w-screen max-w-md">
+                            <div class="h-full flex flex-col space-y-6 py-6 bg-white shadow-xl overflow-y-scroll">
+                                <header class="px-4 sm:px-6">
+                                    <div class="flex items-start justify-between space-x-3">
+                                        <h2 class="text-lg leading-7 font-medium text-gray-900">
+                                            Panel title
+                                        </h2>
+                                        <div class="h-7 flex items-center">
+                                            <button aria-label="Close panel" class="text-gray-400 hover:text-gray-500 transition ease-in-out duration-150">
+                                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="relative flex-1 px-4 sm:px-6">
+                                     // Replace with your content 
+                                    <div class="absolute inset-0 px-4 sm:px-6">
+                                        <div class="h-full border-2 border-dashed border-gray-200"></div>
+                                    </div>
+                                     //End replace 
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div> -->
     </div>
 
 
